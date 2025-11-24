@@ -1,3 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* your existing CSS stays BELOW this */
+
+
 *{
   box-sizing: border-box;
   margin: 0px;

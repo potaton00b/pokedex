@@ -17,7 +17,7 @@ function AboutTab(){
             <h3>Weight: {displayWeight(pokemon.weight)} </h3>
             <h3>Held Items: {displayHeldItems(pokemon.held_items)}</h3>
             <h3>Flavor text: {displayFlavorText(species)}</h3>
-            <h3>Habitat: {species.habitat.name}</h3>
+            <h3>Habitat: {displayHabitat(species)}</h3>
         </div>
 
     )
@@ -61,6 +61,14 @@ function displayFlavorText(data){
 
     const latest = englishEntries[englishEntries.length - 1];
     return (latest.flavor_text);
+}
+
+function displayHabitat(species){
+    if (!species || !species.habitat || !species.habitat.name){
+        return ("None");
+    } else {
+        return species.habitat.name;
+    }
 }
 
 export {AboutTab};
