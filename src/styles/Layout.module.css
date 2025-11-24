@@ -1,0 +1,38 @@
+.navbar{
+    background-color: aqua;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    min-height: 50px;
+    padding: 0 30px;
+}
+
+.navbar *:not(div) {
+    outline: 1px solid black;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    
+}
+
+.centerNav{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 50px;
+}
+
+.leftNav{
+    background-color: blueviolet;
+}
+
+.contentPane{
+    padding: 2rem;
+}
