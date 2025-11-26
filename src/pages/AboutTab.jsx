@@ -1,4 +1,5 @@
 import {useOutletContext} from "react-router-dom";
+import { Button } from "@/components/ui/button";
 
 function AboutTab(){
 //pokemon: height, ability, weight, height, name, held items, 
@@ -11,7 +12,6 @@ function AboutTab(){
     
     return (
         <div className = "aboutTab">
-            <h1>Its the about tab!</h1>
             <h3>Height: {pokemon.height*10}cm</h3>
             <h3>Abilities test: {displayAbilities(pokemon.abilities)}</h3>
             <h3>Weight: {displayWeight(pokemon.weight)} </h3>

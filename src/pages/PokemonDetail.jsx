@@ -1,7 +1,9 @@
 import {useParams} from "react-router-dom";
-import styles from "../styles/PokemonDetail.module.css";
 import {Outlet, Link, NavLink} from "react-router-dom";
 import {useState, useEffect} from "react";
+import { FavoritesButton } from "@/components/FavoritesButtton";
+import { Button } from "@/components/ui/button";
+import { PokemonCard } from "@/components/PokemonCard";
 
 function PokemonDetail(){
     const {name} = useParams();
@@ -23,17 +25,32 @@ function PokemonDetail(){
         fetchPokemon(name);
     },[name]);
 
-
+    
     
     return (
-        <div className = {styles.pokemonDetail}>
-            <h1>{name}</h1>
+        <div className = "grid grid-cols-[200px_auto]">
             
+            <div className = "flex flex-col gap-8 items-center">
+                <PokemonCard pokemon={pokemon} className = "-mb-4" paragraphStyle="mb-2"/>
+                <NavLink to="." end>
+                    {
+                        function({isActive}){
+                            return <Button variant = {isActive ? "default" : "outline"} className = "border border-black/80">About</Button>
+                        }
+                    }
+                </NavLink>
+                <NavLink to="stats">
+                    {
+                        function({isActive}){
+                            return <Button variant = {isActive ? "default" : "outline"} className = "border border-black/80">Stats</Button>
+                        }
+                    }
+                </NavLink>
+                <FavoritesButton pokemon = {pokemon}/>
+            </div>
             
-            <NavLink to="stats">Stats Tab</NavLink>
-            <NavLink to="about">About Tab</NavLink>
 
-            <div className = {styles.tabbedPane}>
+            <div className = "ml-8">
                 <Outlet context = {[pokemon, species, isLoading]}/>
             </div>
         </div>

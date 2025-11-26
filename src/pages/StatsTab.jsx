@@ -11,7 +11,6 @@ function StatsTab(){
 
     return (
         <div className="statsTab">
-            <h1>Stats tab!</h1>
             <h3>HEALTH POINTS: {pokemon.stats[0].base_stat}</h3>
             <h3>ATTACK: {pokemon.stats[1].base_stat}</h3>
             <h3>DEFENSE: {pokemon.stats[2].base_stat}</h3>

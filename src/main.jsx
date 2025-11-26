@@ -7,6 +7,7 @@ import {Favorite} from "./pages/Favorite.jsx"
 import { PokemonDetail} from './pages/PokemonDetail.jsx';
 import { StatsTab } from './pages/StatsTab.jsx';
 import {AboutTab} from './pages/AboutTab.jsx';
+import {FavoriteContext} from "./contexts/FavoriteContext.jsx";
 
 import './index.css'
 import App from './App.jsx'
@@ -33,10 +34,9 @@ const router = createBrowserRouter([
             element: <StatsTab />,
           },
           {
-            path: "about",
+            index: true,
             element: <AboutTab />
           }
-
         ]
       },
     ]
@@ -47,6 +47,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <FavoriteContext>
+      <RouterProvider router={router} />
+    </FavoriteContext>
   </StrictMode>,
 )

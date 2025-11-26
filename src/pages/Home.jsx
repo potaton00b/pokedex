@@ -39,7 +39,7 @@ function Home(){
         <>  
             <div className = {styles.homeTitle}>
                 <h1>Pokedex</h1>
-                <SearchBar searchTerm = {searchTerm} setSearchTerm = {setSearchTerm}/>
+                <SearchBar searchTerm = {searchTerm} setSearchTerm = {setSearchTerm} />
             </div>
 
             <div className = {styles.pokemonCardContainer}>
